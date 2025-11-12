@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { saveAs } from './utils'
+import { saveAs } from '../utils/utils'
 
 function emptyEntry(){
   return { id: Date.now(), symbol: '', entry: '', exit: '', size: 0, pnl: 0, notes: '', strategy: '' }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react'
-import client from '../lib/sanityClient'
+import client from '../../lib/sanityClient'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
 const COLORS = ['#60A5FA','#34D399','#FBBF24','#F87171','#A78BFA']

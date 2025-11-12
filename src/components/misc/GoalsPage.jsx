@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import client from '../lib/sanityClient'
+import client from '../../lib/sanityClient'
 
 export default function GoalsPage(){
   const [doc, setDoc] = useState(null)

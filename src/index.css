@@ -2,23 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --accent: 59 130 246; /* blue */
+/* === Chartisan Theme === */
+@layer base {
+  body {
+    @apply bg-chartisan-bg text-chartisan-text font-sans;
+  }
 }
 
-html.dark {
-  --bg: #0f172a;
-  --surface: #0b1220;
-  --text: #e6eef8;
-}
-html {
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --text: #0b1220;
+.glass-card {
+ @apply bg-chartisan-surface/80 border border-chartisan-border backdrop-blur-xl rounded-2xl shadow-softGlow;
+
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+.btn-gold {
+  @apply bg-chartisan-gold text-chartisan-bg font-semibold px-4 py-2 rounded-lg 
+         hover:bg-chartisan-goldSoft transition-all duration-300;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-chartisan-surface/80 border border-chartisan-border backdrop-blur-xl rounded-2xl shadow-softGlow;
+  }
+
+  
+}
+@layer components {
+  .glass-card {
+    @apply bg-chartisan-glass border border-chartisan-border rounded-2xl
+           backdrop-blur-xl shadow-softGlow shadow-goldInner;
+  }
+
+  .btn-gold {
+    @apply px-5 py-2 font-semibold rounded-lg border border-chartisan-gold 
+           text-chartisan-gold hover:bg-chartisan-gold hover:text-chartisan-bg
+           transition-all duration-300;
+  }
+
+  .heading {
+    @apply font-serif text-3xl text-chartisan-gold tracking-wide;
+  }
+
+  .subtext {
+    @apply text-chartisan-textMuted text-sm;
+  }
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite
 }

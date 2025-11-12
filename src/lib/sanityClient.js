@@ -1,9 +1,9 @@
-import sanityClient from '@sanity/client'
+// src/lib/sanityClient.js
+const client = {
+  fetch: async (query) => {
+    console.log('Mock Sanity query:', query);
+    return []; // Return empty array for now
+  }
+};
 
-const client = sanityClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID || 'xwb15wfq',
-  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
-  useCdn: true,
-})
-
-export default client
+export default client;
