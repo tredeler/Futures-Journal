@@ -2,42 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Chartisan Theme === */
+/* === Chartisan Base Theme === */
 @layer base {
   body {
     @apply bg-chartisan-bg text-chartisan-text font-sans;
   }
 }
 
-.glass-card {
- @apply bg-chartisan-surface/80 border border-chartisan-border backdrop-blur-xl rounded-2xl shadow-softGlow;
-
-}
-
-.btn-gold {
-  @apply bg-chartisan-gold text-chartisan-bg font-semibold px-4 py-2 rounded-lg 
-         hover:bg-chartisan-goldSoft transition-all duration-300;
-}
-
+/* --- CHARTISAN COMPONENTS --- */
 @layer components {
+  /* GLASS CARD — unified version */
   .glass-card {
-    @apply bg-chartisan-surface/80 border border-chartisan-border backdrop-blur-xl rounded-2xl shadow-softGlow;
-  }
-
-  
-}
-@layer components {
-  .glass-card {
-    @apply bg-chartisan-glass border border-chartisan-border rounded-2xl
-           backdrop-blur-xl shadow-softGlow shadow-goldInner;
-  }
-
-  .btn-gold {
-    @apply px-5 py-2 font-semibold rounded-lg border border-chartisan-gold 
-           text-chartisan-gold hover:bg-chartisan-gold hover:text-chartisan-bg
+    @apply bg-black/40 
+           backdrop-blur-md 
+           border border-white/5 
+           rounded-xl
+           shadow-[0_0_25px_rgba(0,0,0,0.35)]
            transition-all duration-300;
   }
 
+  /* SOFT GOLD GLOW */
+  .soft-glow {
+    box-shadow:
+      0 0 12px rgba(199,168,109,0.04),
+      0 0 28px rgba(199,168,109,0.03);
+  }
+
+  /* METRIC CARD */
+  .metric-card {
+    @apply glass-card soft-glow p-6 flex flex-col gap-2;
+  }
+
+  /* HEADINGS */
+  .lux-heading {
+    @apply text-[1.85rem] tracking-wide font-light text-chartisan-gold/90;
+  }
+
+  .lux-subtitle {
+    @apply text-sm text-chartisan-textMuted/70 tracking-wider;
+  }
+
+  /* GOLD DIVIDER */
+  .gold-line {
+    @apply w-16 h-px bg-gradient-to-r from-chartisan-gold/70 to-chartisan-gold/20 mb-6;
+  }
+
+  /* GOLD BUTTON (definitive version) */
+  .btn-gold {
+    @apply px-5 py-2.5 rounded-lg 
+           bg-chartisan-gold/15 
+           text-chartisan-gold/90 
+           tracking-wide font-medium
+           border border-chartisan-gold/20
+           hover:bg-chartisan-gold/25
+           hover:text-chartisan-bg
+           transition-all duration-300 ease-out;
+  }
+
+  /* OUTLINE BUTTON */
+  .btn-outline-gold {
+    @apply px-5 py-2.5 rounded-lg 
+           border border-chartisan-gold/25 
+           text-chartisan-gold/80 
+           hover:bg-chartisan-gold/10
+           transition-all duration-300;
+  }
+
+  /* Serif Title + Subtext */
   .heading {
     @apply font-serif text-3xl text-chartisan-gold tracking-wide;
   }
@@ -45,16 +76,4 @@
   .subtext {
     @apply text-chartisan-textMuted text-sm;
   }
-}
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite
 }
